@@ -14,10 +14,15 @@
             if(mysqli_connect_errno()){
                 echo "Failed to connect to MySQL: " . mysqli_connect_error();
             }
-            else{
-                echo "Connected";
-            }
+
         }
+
+        public function register($username,$password,$name,$email){
+            $reg = mysqli_query($this->dbcon, "INSERT INTO users(username,password,name,email)
+             VALUES('$username','$password','$name','$email')");
+            return $reg;
+        }
+
     }
 
 
