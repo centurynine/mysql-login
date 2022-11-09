@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,12 +13,20 @@
 </head>
 <body>
     <div id="nav-placeholder"></div>
-    
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+ 
 </body>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
 $.get("nav.html", function(data){
     $("#nav-placeholder").replaceWith(data);
+});
+</script>
+<script>
+$(window).on('load', function () {
+    $(".loader-wrapper").fadeOut("slow");
 });
 </script>
 <script src="js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

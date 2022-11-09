@@ -33,6 +33,7 @@ body {
     margin-bottom: 1rem;
     border: 0;
     border-top: 3px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.1);
   }
 .card-padding{
     margin-top: 2%;
@@ -82,4 +83,101 @@ body {
 
   .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .show>.nav-link {
     color: rgba(159, 159, 159, 0.9);
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #008CBA;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+  }
+  
+  .card:hover{
+    
+    background-color: #3fa3c5;
+    overflow: hidden;
+    transition: .5s ease;
+    transform: scale(1.1);
+  }
+
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .loader {
+  border: 7px solid #f3f3f3; /* Light grey */
+  border-top: 7px solid #3f3f3f; /* Blue */
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.card-login {
+    border-radius: 20px;
+    width: 70%;
+    height: 800px;
+    margin-top: 130px;
+    color: #3f3f3f;
+    background-color: rgb(240, 240, 240);
+}
+.box{
+    background-color: #008CBA;
+    border: 1px solid #008CBA;
+    min-height: 50px;
+    font-size: 2rem;
+}
+
+.row{
+   
+    border-radius: 30px;
+    box-shadow: 12px 12px 22px #cbced1,;
+}
+.form-control{
+    border-top-left-radius: 20px;
+    border-radius: 20px;
+    color: #3f3f3f;
+    margin-inline: 30%;
+    margin-left: 50%;
+    position: relative;
+    padding-left: 45px ;
+}
+
+.fa {
+    margin-left: 200px;
+    position: absolute;
+    top: 25%;
+    left: 20px;
+    color: #3f3f3f;
+    z-index: 99;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
+    border-top-left-radius: 20px;
+    border-radius: 20px;
+    margin-left: 200px;
+}
+
+.btn-center-login{
+    border-radius: 20px;
+    margin-inline: 40%;
+    width: 20%;
 }
