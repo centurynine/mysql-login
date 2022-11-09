@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+  <div id="nav-placeholder"></div>
+    <div class="row row-center">
+     <div class="card card-padding">
+        <img class="card-img-top card-image" src="assets/images/flutter.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-md-center">Flutter</h5>
+          <p class="card-text text-md-center">Mobile Application</p>
+          <br>
+          <div class="row justify-content-center">
+            <button href="#" class="btn btn-primary">Projects</button>
+          </div>
+        </div>
+      </div>
+      <div class="card card-padding ">
+        <img class="card-img-top card-image" src="assets/images/python.png" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-md-center">Python</h5>
+          <p class="card-text text-md-center">Python Programming Language</p>
+          <div class="row justify-content-center">
+            <button href="#" class="btn btn-primary">Projects</button>
+          </div>
+        </div>
+      </div>
+      <div class="card card-padding ">
+        <img class="card-img-top card-image" src="assets/images/iot.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-md-center">IoT</h5>
+          <p class="card-text text-md-center">Internet of Things <br>( Arduino,ESP8266 )</p>
+          <div class="row justify-content-center">
+            <button href="#" class="btn btn-primary">Projects</button>
+          </div>
+        </div>
+      </div>
+      
+     </div>
+</body>
+<script src="//code.jquery.com/jquery.min.js"></script>
+<script>
+$.get("nav.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
+</script>
+<script src="js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
