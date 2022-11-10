@@ -18,6 +18,9 @@
 
 </head>
 <body>
+<div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
 <?php 
     if(isset($_SESSION['id'])){
         if($_SESSION['id'] != ""){
@@ -80,6 +83,10 @@
         $("#nav-placeholder-session").replaceWith(data);
     });
 </script>
-
+<script>
+$(window).on('load', function () {
+    $(".loader-wrapper").fadeOut("slow");
+});
+</script>
 <script src="js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>

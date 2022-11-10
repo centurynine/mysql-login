@@ -24,9 +24,20 @@
         }
 
         public function register($username,$password,$name,$email){
-            $reg = mysqli_query($this->dbcon, "INSERT INTO users(username,password,name,email)
-             VALUES('$username','$password','$name','$email')");
-            return $reg;
+            if($username != "" && $password != "" && $name != "" && $email != ""){
+                $checkuser = mysqli_query($this->dbcon, "SELECT username FROM users WHERE username = '$username'");
+                $count = mysqli_num_rows($checkuser);
+                if($count == 0){
+                    $register = mysqli_query($this->dbcon, "INSERT INTO users(username,password,name,email) VALUES('$username','$password','$name','$email')");
+                    return $register;
+                }
+                else{
+                    return false;
+                }
+            }
+            else{
+                return false;
+            }
         }
 
         public function signin($username,$password){
