@@ -1,4 +1,14 @@
+<?php 
 
+    session_start();
+    if($_SESSION['id'] != ""){
+        
+    }
+    else{
+        header("location:login.php");
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,17 +22,37 @@
 
 </head>
 <body>
-    <div id="nav-placeholder"></div>
+<?php 
+    if(isset($_SESSION['id'])){
+        if($_SESSION['id'] != ""){
+            echo '<div id="nav-placeholder-session"></div>';
+        }
+        else{
+            echo '<div id="nav-placeholder"></div>';
+        }
+    }
+    else{
+        echo '<div id="nav-placeholder"></div>';
+    }
+    ?>
     <div class="loader-wrapper">
         <span class="loader"><span class="loader-inner"></span></span>
     </div>
- 
+    <div class="container">
+        <h1 class="mt-5">Welcome : <?php echo $_SESSION['name']; ?></h1>
+    </div>
+
 </body>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
-$.get("nav.html", function(data){
-    $("#nav-placeholder").replaceWith(data);
-});
+    $.get("nav.html", function(data) {
+        $("#nav-placeholder").replaceWith(data);
+    });
+</script>
+<script>
+    $.get("nav_session.php", function(data) {
+        $("#nav-placeholder-session").replaceWith(data);
+    });
 </script>
 <script>
 $(window).on('load', function () {

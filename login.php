@@ -1,3 +1,31 @@
+<?php 
+    session_start();
+    include_once('function.php');
+    $userdata = new DB_con();
+
+    if(isset($_POST['login'])){
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        $result = $userdata->signin($username,$password);
+        $num = mysqli_fetch_array($result);
+
+        if($num > 0){
+            $_SESSION['id'] = $num['id'];
+            $_SESSION['name'] = $num['name'];
+            echo "<script>alert('Login Successful');</script>";
+            echo "<script>window.location.href='index.php'</script>";
+        }
+        else {
+            echo "<script>alert('Failed');</script>";
+            echo "<script>window.location.href='login.php'</script>";
+        }
+
+    }
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,13 +40,21 @@
 </head>
 
 <body>
-    <div id="nav-placeholder"></div>
-    <?php
-
-    include_once('function.php');
-    $testcon = new DB_con();
-
+    <?php 
+    if(isset($_SESSION['id'])){
+        if($_SESSION['id'] != ""){
+            header("location:index.php");
+    }
+    else{
+        echo '<div id="nav-placeholder"></div>';
+    }
+}
+else{
+    echo '<div id="nav-placeholder"></div>';
+}
     ?>
+ 
+    <form method="post">
     <section class="login">
         <div class="p-5"></div>
         <div class="container">
@@ -55,31 +91,39 @@
                     </div>
                     <div class="input-group mb-3">
                         <i class="fa solid fa-user"></i>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username">
+                        <input name="username" type="text" class="form-control" placeholder="Username" aria-label="Username">
                         
                     </div>
                     <span id="usernameavailable"></span>
                     <div class="input-group mb-3">
                         <i class="fa solid fa-lock"></i>
-                        <input type="password" class="form-control" placeholder="Password" aria-label="Password">
+                        <input name="password" type="password" class="form-control" placeholder="Password" aria-label="Password">
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg btn-block btn-center-login">
+                    <button type="submit" name="login" class="btn btn-primary btn-lg btn-block btn-center-login">
                         Login
-
                     </button>
+                   
                 </div>
             </div>
 
         </div>
     </section>
+    </form>
 </body>
 
 <script src="//code.jquery.com/jquery.min.js"></script>
+
 <script>
     $.get("nav.html", function(data) {
         $("#nav-placeholder").replaceWith(data);
     });
 </script>
+<script>
+    $.get("nav_session.php", function(data) {
+        $("#nav-placeholder-session").replaceWith(data);
+    });
+</script>
+
 <script src="js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </html>

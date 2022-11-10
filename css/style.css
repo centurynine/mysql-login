@@ -181,3 +181,14 @@ body {
     margin-inline: 40%;
     width: 20%;
 }
+
+.button:disabled {
+    background-color: #3f3f3f;
+    color: #d1cfcf;
+    font-size: 14px;
+    font-family: kanit;
+    font-weight: 400;
+    border-radius: 2rem;
+    border-color: #3f3f3f;
+ 
+}
