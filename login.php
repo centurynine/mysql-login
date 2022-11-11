@@ -16,7 +16,7 @@
         }
         else {
             echo "<script>alert('Failed');</script>";
-            echo "<script>window.location.href='login.php'</script>";
+            // echo "<script>window.location.href='login.php'</script>";
         }
 
     }
@@ -108,7 +108,7 @@ else{
                     <button type="submit" name="login" class="btn btn-primary btn-lg btn-block btn-center-login">
                         Login
                     </button>
-                   
+  
                 </div>
             </div>
 
@@ -136,8 +136,8 @@ $(window).on('load', function () {
     $(".loader-wrapper").fadeOut("slow");
 });
 </script>
-
-
-
+<script>
+ 
+</script>
 
 </html>
