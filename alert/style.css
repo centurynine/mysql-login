@@ -1,14 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap');
-*{
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-}
-body{
-  font-family: 'Noto Sans TC', sans-serif;
-  height: 100vh;
-  background: linear-gradient(75deg,#2980b9,#8e44ad);
-}
+ 
+ 
 .click, .popup_box{
   position: absolute;
   top: 50%;

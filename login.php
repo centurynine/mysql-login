@@ -6,10 +6,8 @@
     if(isset($_POST['login'])){
         $username = $_POST['username'];
         $password = md5($_POST['password']);
-
         $result = $userdata->signin($username,$password);
         $num = mysqli_fetch_array($result);
-
         if($num > 0){
             $_SESSION['id'] = $num['id'];
             $_SESSION['name'] = $num['name'];
@@ -34,6 +32,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="alert/style.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/f0d5a6a222.js" crossorigin="anonymous"></script>
@@ -137,4 +136,8 @@ $(window).on('load', function () {
     $(".loader-wrapper").fadeOut("slow");
 });
 </script>
+
+
+
+
 </html>
