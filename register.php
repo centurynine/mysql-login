@@ -6,7 +6,7 @@
     if(isset($_POST['submit'])) {
     
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
         $name = $_POST['name'];
         $email = $_POST['email'];
     
@@ -42,7 +42,7 @@
         <div class="p-5"></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 left-card">
+                <div class="col left-card">
                     <style>
                         .left-card {
                             background-image: url("assets/images/password.png");

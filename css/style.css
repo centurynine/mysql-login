@@ -168,12 +168,15 @@ body {
     left: 20px;
     color: #3f3f3f;
     z-index: 99;
+    margin-inline: 30%;
 }
 
 .input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback){
     border-top-left-radius: 20px;
     border-radius: 20px;
-    margin-left: 200px;
+    justify-content: center;
+    margin-inline: 30%;
+
 }
 
 .btn-center-login{
@@ -192,3 +195,34 @@ body {
     border-color: #3f3f3f;
  
 }
+
+.container-form{
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+@media (max-width : 1200px) {
+    .left-card{
+        display: none;
+        
+    }
+    .right-card{
+        height: 800px;
+        border-radius: 20px;
+        width: 120px;
+    }
+ 
+}
+ 
+ 
+
+
+
+
+
+
+
+
+
+

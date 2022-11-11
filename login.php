@@ -5,7 +5,7 @@
 
     if(isset($_POST['login'])){
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
 
         $result = $userdata->signin($username,$password);
         $num = mysqli_fetch_array($result);
@@ -62,17 +62,20 @@ else{
         <div class="p-5"></div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 left-card">
+                <div class="col left-card">
+                    <div class="container-left">
+                    </div>
                     <style>
                         .left-card {
                             background-image: url("assets/images/password.png");
                             background-size: fill;
                             background-position: center;
                             background-repeat: no-repeat;
+                            object-fit: contain;
+                            padding-inline: 30px;
                             height: 800px;
                             width: 45%;
-                            background-color: #3f3f3f;
-                            ;
+                            background-color: #3f3f3f;;
                             border-top-left-radius: 20px;
                             border-bottom-left-radius: 20px;
                         }
@@ -80,6 +83,7 @@ else{
 
                 </div>
                 <div class="col right-card">
+                <div class="container-right">
                     <style>
                         .right-card {
                             background-color: #F5F5F5;
@@ -87,7 +91,7 @@ else{
                             border-bottom-right-radius: 20px;
                         }
                     </style>
-
+                    </div>
                     <div class="p-md-4"></div>
                     <div class="text-center p-5">
                         <h1>Login</h1>
