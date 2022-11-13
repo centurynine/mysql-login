@@ -196,6 +196,12 @@ body {
  
 }
 
+.project-link{
+    font-family: kanit;
+    text-decoration: none;
+    color: #f3f3f3;
+}
+
 .container-form{
     margin-top: 50px;
     margin-left: 50px;

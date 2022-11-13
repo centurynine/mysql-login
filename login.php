@@ -95,6 +95,7 @@ else{
                     <div class="p-md-4"></div>
                     <div class="text-center p-5">
                         <h1>Login</h1>
+                        <p1>Enter your username and password to login</p1>
                     </div>
                     <div class="input-group mb-3">
                         <i class="fa solid fa-user"></i>
@@ -109,7 +110,6 @@ else{
                     <button type="submit" name="login" class="btn btn-primary btn-lg btn-block btn-center-login">
                         Login
                     </button>
-  
                 </div>
             </div>
 

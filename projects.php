@@ -42,7 +42,7 @@
           <p class="card-text text-md-center">Mobile Application</p>
           <br>
           <div class="row justify-content-center">
-            <button href="#" class="btn btn-primary">Projects</button>
+            <a class="btn btn-primary"" href="flutter-page.php">Projects</a>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
           <h5 class="card-title text-md-center">Python</h5>
           <p class="card-text text-md-center">Python Programming Language</p>
           <div class="row justify-content-center">
-            <button href="#" class="btn btn-primary">Projects</button>
+          <a class="btn btn-primary"" href="#">Projects</a>
             <div class="overlay">
               <div class="text">Hello World</div>
             </div>
@@ -65,7 +65,7 @@
           <h5 class="card-title text-md-center">IoT</h5>
           <p class="card-text text-md-center">Internet of Things <br>( Arduino,ESP8266 )</p>
           <div class="row justify-content-center">
-            <button href="#" class="btn btn-primary">Projects</button>
+          <a class="btn btn-primary"" href="#">Projects</a>
           </div>
         </div>
       </div>
