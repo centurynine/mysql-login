@@ -11,6 +11,12 @@
 <body>
 <?php 
     session_start();
+    if($_SESSION['id'] != ""){
+        
+    }
+    else{
+        header("location:login.php");
+    }
     if(isset($_SESSION['id'])){
         if($_SESSION['id'] != ""){
             echo '<div id="nav-placeholder-session"></div>';
@@ -32,7 +38,11 @@
         });
     </script>
     <div class="text-md-center">
-        <h1>Welcome ... <?php echo $_SESSION['name']; ?></h1>
+
+        <h1 class="mt-5">Welcome : <?php echo $_SESSION['name']; ?> 
+        </h1>
+
+        <!-- <h1>Welcome ... <?php echo $_SESSION['name']; ?></h1> -->
     </div>
 </body>
 <script src="//code.jquery.com/jquery.min.js"></script>

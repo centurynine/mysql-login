@@ -44,6 +44,11 @@
             return $signin;
         }
 
+        public function information($data){
+            $information = mysqli_query($this->dbcon, "SELECT id, name, detail, coverimage, latitude, longitude FROM attractions LIMIT 0,$data");
+            return $information;
+        }
+
     }
 
 

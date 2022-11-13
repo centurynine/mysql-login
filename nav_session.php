@@ -23,7 +23,7 @@
                         <a class="nav-link" href="projects.php">Project</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php">Contact</a>
+                        <a class="nav-link" href="info.php">Info</a>
                     </li>
                     <li class="nav-item">
                         <a href="logout.php" class="btn btn-rounded btn-danger m-md-1">Logout</a>
