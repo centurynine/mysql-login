@@ -49,6 +49,16 @@
             return $information;
         }
 
+        public function editUser($id,$name,$email,$username){
+            if($id != "" && $name != "" && $email != "" && $username != ""){
+                $edituser = mysqli_query($this->dbcon, "UPDATE users SET name = '$name', email = '$email', username = '$username' WHERE id = '$id'");
+                return $edituser;
+            }
+            else{
+                return false;
+            }
+        }
+
     }
 
 

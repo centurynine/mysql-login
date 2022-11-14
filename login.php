@@ -10,7 +10,9 @@
         $num = mysqli_fetch_array($result);
         if($num > 0){
             $_SESSION['id'] = $num['id'];
+            $_SESSION['email'] = $num['email'];
             $_SESSION['name'] = $num['name'];
+            $_SESSION['username'] = $num['username'];
             echo "<script>alert('Login Successful');</script>";
             echo "<script>window.location.href='index.php'</script>";
         }
@@ -112,10 +114,11 @@ else{
                     </button>
                 </div>
             </div>
-
+            
         </div>
     </section>
     </form>
+    <div class="p-5"></div>
 </body>
 
 <script src="//code.jquery.com/jquery.min.js"></script>

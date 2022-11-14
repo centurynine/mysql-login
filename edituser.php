@@ -1,12 +1,35 @@
 <?php
 
 session_start();
+    if ($_SESSION['id'] != "") {
+        echo "<script>console.log('User is logged in!');</script>";
+    } else {
+        header("Location: login.php");
+    }
 
-if ($_SESSION['id'] != "") {
-} else {
-    header("Location: login.php");
-}
+    if(isset($_POST['submit'])){
+        include_once('function.php');
+        $changedata = new DB_con;
+        $id = $_SESSION['id'];
+        $name= $_POST['name'];
+        $email = $_POST['email'];
+        $username = $_POST['username'];
+        if(is_null($name)||is_null($email)||is_null($username)){
+            echo "<script>alert('Please fill in all fields!');</script>";
+        } else{
+            $sql = $changedata->editUser($id,$name,$email,$username);
+            if($sql){
+                $_SESSION['name'] = $name;
+                $_SESSION['email'] = $email;
+                $_SESSION['username'] = $username;
+                echo "<script>alert('User data updated successfully!');</script>";
+                echo "<script>window.location.href='edituser.php'</script>";
+            } else {
+                echo "<script>alert('Something went wrong! Please try again!');</script>";
+            }
+        }
 
+    }
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +42,7 @@ if ($_SESSION['id'] != "") {
     <title>Edit user</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-edit.css">
 </head>
 
 <body>
@@ -42,11 +66,25 @@ if ($_SESSION['id'] != "") {
         <h1 class="mt-5">Welcome : <?php echo $_SESSION['name']; ?> to Edit user page!
         </h1>
     </div>
-<form>
-    <div class="container">
+<form method="post">
+    <div class="container-form">
         <div class="form-edit">
+          <div class="form-item">
+                  <label for="username">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name" value="<?php echo $_SESSION['name']; ?>">
+            </div>
+            <div class="form-item">
+                  <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Username" value="<?php echo $_SESSION['username']; ?>">
+            </div>
+            <div class="form-item">
+                 <label for="username">Email</label>
+                <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email']; ?>">
+            </div>
+            <div class="form-item">
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
+         </div>
             
-        </div>
     </div>
 </form>
 
