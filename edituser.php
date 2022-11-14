@@ -79,7 +79,8 @@ session_start();
             </div>
             <div class="form-item">
                  <label for="username">Email</label>
-                <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $_SESSION['email']; ?>">
+                <input type="email" id="email" name="email" aria-label="email" placeholder="Email" value="<?php echo $_SESSION['email']; ?>" onblur="checkemail(this.value)">
+                <span id="emailavailable"></span>
             </div>
             <div class="form-item">
             <button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
@@ -107,5 +108,18 @@ session_start();
 </script>
 <script src="js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    function checkemail(val) {
+        $.ajax({
+            type: "POST",
+            url: "checkemail.php",
+            data: 'email=' + val,
+            success: function(data) {
+                $("#emailavailable").html(data);
+            }
+        });
+    }
+    </script>
 
 </html>

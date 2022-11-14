@@ -59,6 +59,21 @@
             }
         }
 
+        public function emailavailable($email) {
+            $checkemail = mysqli_query($this->dbcon, "SELECT email FROM users WHERE email = '$email'");
+            if($checkemail){
+                    return $checkemail;
+            }
+            else{
+                return false;
+            }
+        }
+
+        public function emailCheck($email){
+            $email = mysqli_query($this->dbcon, "SELECT email FROM users WHERE email = '$email'");
+            return $email;
+        }
+
     }
 
 
