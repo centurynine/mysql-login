@@ -50,6 +50,7 @@
         }
 
         public function editUser($id,$name,$email,$username){
+
             if($id == "" || $name == "" || $email == "" || $username == "" || empty($id) || empty($name) || empty($email) || empty($username) || count(explode(' ', $username)) > 1 || count(explode(' ', $email)) > 1){
                 return false;
             }
@@ -71,7 +72,7 @@
 
         public function emailCheck($email){
             $email = mysqli_query($this->dbcon, "SELECT email FROM users WHERE email = '$email'");
-            
+
             return $email;
         }
 
