@@ -71,6 +71,7 @@
 
         public function emailCheck($email){
             $email = mysqli_query($this->dbcon, "SELECT email FROM users WHERE email = '$email'");
+            
             return $email;
         }
 
