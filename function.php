@@ -50,12 +50,12 @@
         }
 
         public function editUser($id,$name,$email,$username){
-            if($id != "" && $name != "" && $email != "" && $username != ""){
-                $edituser = mysqli_query($this->dbcon, "UPDATE users SET name = '$name', email = '$email', username = '$username' WHERE id = '$id'");
-                return $edituser;
+            if($id == "" || $name == "" || $email == "" || $username == "" || empty($id) || empty($name) || empty($email) || empty($username) || count(explode(' ', $username)) > 1 || count(explode(' ', $email)) > 1){
+                return false;
             }
             else{
-                return false;
+                $edituser = mysqli_query($this->dbcon, "UPDATE users SET name = '$name', email = '$email', username = '$username' WHERE id = '$id'");
+                return $edituser;
             }
         }
 
