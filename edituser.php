@@ -14,6 +14,8 @@ session_start();
         $name= $_POST['name'];
         $email = $_POST['email'];
         $username = $_POST['username'];
+        $ruleEdit = $_SESSION['ruleEdit'];
+        if($ruleEdit == 'true'){
         if(is_null($name)||is_null($email)||is_null($username)){
             echo "<script>alert('Please fill in all fields!');</script>";
         } else{
@@ -28,8 +30,11 @@ session_start();
                 echo "<script>alert('Something went wrong! Please try again!');</script>";
             }
         }
-
+    } else {
+        echo "<script>alert('Error with your web browser!');</script>";
     }
+    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +88,7 @@ session_start();
                 <span id="emailavailable"></span>
             </div>
             <div class="form-item">
-            <button type="submit" name="submit" class="btn btn-primary">Submit</button></div>
+            <button type="submit" name="submit" id="submit" class="btn btn-primary">Submit</button></div>
          </div>
             
     </div>
