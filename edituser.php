@@ -8,11 +8,12 @@ session_start();
     }
 
     if(isset($_POST['submit'])){
+        if(isset($_COOKIE['changeEmail'])){
         include_once('function.php');
         $changedata = new DB_con;
         $id = $_SESSION['id'];
         $name= $_POST['name'];
-        $email = $_POST['email'];
+        $email = $_COOKIE['changeEmail'];
         $username = $_POST['username'];
         $ruleEdit = $_SESSION['ruleEdit'];
         if($ruleEdit == 'true'){
@@ -31,9 +32,13 @@ session_start();
             }
         }
     } else {
-        echo "<script>alert('Error with your web browser!');</script>";
+        echo "<script>alert('Please check your email!');</script>";
     }
     }
+}
+else {
+     
+}
     
 ?>
 
@@ -48,6 +53,8 @@ session_start();
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-edit.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
 </head>
 
 <body>
@@ -68,22 +75,22 @@ session_start();
         <span class="loader"><span class="loader-inner"></span></span>
     </div>
     <div class="text-md-center">
-        <h1 class="mt-5">Welcome : <?php echo $_SESSION['name']; ?> to Edit user page!
+        <h1 class="mt-5">แก้ไขข้อมูลผู้ใช้ : <?php echo $_SESSION['name']; ?>
         </h1>
     </div>
 <form method="post">
     <div class="container-form">
         <div class="form-edit">
           <div class="form-item">
-                  <label for="username">Name</label>
+                  <label for="username"><i class="bi-file-person">  </i></i></i>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <input type="text" id="name" name="name" placeholder="Name" value="<?php echo $_SESSION['name']; ?>">
             </div>
             <div class="form-item">
-                  <label for="username">Username</label>
+                  <label for="username"><i class="bi-person-fill">  </i>Username</label>
                 <input type="text" id="username" name="username" placeholder="Username" value="<?php echo $_SESSION['username']; ?>">
             </div>
             <div class="form-item">
-                 <label for="username">Email</label>
+                 <label for="username"><i class="bi-envelope-fill"></i>  </i>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <input type="email" id="email" name="email" aria-label="email" placeholder="Email" value="<?php echo $_SESSION['email']; ?>" onblur="checkemail(this.value)">
                 <span id="emailavailable"></span>
             </div>
