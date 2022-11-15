@@ -1,4 +1,7 @@
+@import url("reset.css");
+
 *
+
 
 .form-edit {
     margin-left: 30%;
@@ -30,8 +33,6 @@ input[type="email"] {
     margin: 10px;
     color: #3f3f3f;
     width: 100%;
-    font-size: 20px;
-    font-weight: bold;
-
+    font-size: 18px;
 
 }

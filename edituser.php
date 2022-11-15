@@ -82,7 +82,7 @@ else {
     <div class="container-form">
         <div class="form-edit">
           <div class="form-item">
-                  <label for="username"><i class="bi-file-person">  </i></i></i>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                  <label for="name"><i class="bi-file-person">  </i></i></i>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <input type="text" id="name" name="name" placeholder="Name" value="<?php echo $_SESSION['name']; ?>">
             </div>
             <div class="form-item">
@@ -90,7 +90,7 @@ else {
                 <input type="text" id="username" name="username" placeholder="Username" value="<?php echo $_SESSION['username']; ?>">
             </div>
             <div class="form-item">
-                 <label for="username"><i class="bi-envelope-fill"></i>  </i>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                 <label for="email"><i class="bi-envelope-fill"></i>  </i>Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
                 <input type="email" id="email" name="email" aria-label="email" placeholder="Email" value="<?php echo $_SESSION['email']; ?>" onblur="checkemail(this.value)">
                 <span id="emailavailable"></span>
             </div>
